@@ -1,0 +1,7 @@
+[
+    {"Id": 1, "Titulo": "Cien Años de Soledad", "Autor": "Gabriel García Márquez", "Cateogiria": "Ficción", "Disponible": true},
+    {"Id": 2, "Titulo": "Don Quijote de la Mancha", "Autor": "Miguel de Cervantes", "Cateogiria": "Clásico", "Disponible": false},
+    {"Id": 3, "Titulo": "La Sombra del Viento", "Autor": "Carlos Ruiz Zafón", "Cateogiria": "Misterio", "Disponible": false},
+    {"Id": 4, "Titulo": "El Amor en los Tiempos del Cólera", "Autor": "Gabriel García Márquez", "Cateogiria": "Romance", "Disponible": true},
+    {"Id": 5, "Titulo": "1984", "Autor": "George Orwell", "Cateogiria": "Ciencia Ficción", "Disponible": true}
+]
