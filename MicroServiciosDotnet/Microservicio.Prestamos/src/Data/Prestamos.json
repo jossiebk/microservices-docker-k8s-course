@@ -1,0 +1,10 @@
+[
+    {"Id":1, "LibroId":1, "Usuario":"Jossie Castrillo", "FechaPrestamo":"2025-09-05", "Devuelto": false},
+    {"Id":2, "LibroId":5, "Usuario":"Jossie Castrillo2", "FechaPrestamo":"2025-09-05", "Devuelto": true},
+    {"Id":3, "LibroId":3, "Usuario":"Jossie Castrillo3", "FechaPrestamo":"2025-09-05", "Devuelto": false},
+    {"Id":4, "LibroId":4, "Usuario":"Jossie Castrillo4", "FechaPrestamo":"2025-09-05", "Devuelto": false},
+    {"Id":5, "LibroId":2, "Usuario":"Jossie Castrillo5", "FechaPrestamo":"2025-09-05", "Devuelto": true},
+    {"Id":6, "LibroId":1, "Usuario":"Jossie Castrillo6", "FechaPrestamo":"2025-09-05", "Devuelto": true},
+    {"Id":7, "LibroId":5, "Usuario":"Jossie Castrillo7", "FechaPrestamo":"2025-09-05", "Devuelto": true},
+    {"Id":8, "LibroId":5, "Usuario":"Jossie Castrillo8", "FechaPrestamo":"2025-09-05", "Devuelto": true}
+]

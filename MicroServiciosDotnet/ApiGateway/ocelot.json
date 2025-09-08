@@ -1,0 +1,44 @@
+{
+    "Routes": [
+        {
+            "DownstreamPathTemplate": "/api/libros",
+            "UpstreamPathTemplate": "/api/gateway/libros",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5101 }
+            ],
+            "UpstreamHttpMethod": [ "Get","Post"] 
+        },
+        {
+            "DownstreamPathTemplate": "/api/libros/{id}",
+            "UpstreamPathTemplate": "/api/gateway/libros/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5101 }
+            ],
+            "UpstreamHttpMethod": [ "Get", "Delete"] 
+        },
+        {
+            "DownstreamPathTemplate": "/api/prestamos",
+            "UpstreamPathTemplate": "/api/gateway/prestamos",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5102 }
+            ],
+            "UpstreamHttpMethod": [ "Get"] 
+        },
+        {
+            "DownstreamPathTemplate": "/api/prestamos/{id}",
+            "UpstreamPathTemplate": "/api/gateway/prestamos/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5102 }
+            ],
+            "UpstreamHttpMethod": [ "Get"] 
+        }
+    ],
+    "GlobalConfiguration":{
+        "BaseUrl": "http://localhost:9595"
+    }
+
+}
