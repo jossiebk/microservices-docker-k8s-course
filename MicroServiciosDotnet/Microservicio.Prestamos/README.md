@@ -1,4 +1,4 @@
-# Microservicio.Libros
+# Microservicio.Prestamos
 
 Microservicio de ejemplo para gestión de libros en .NET 8.
 
@@ -10,7 +10,7 @@ Microservicio de ejemplo para gestión de libros en .NET 8.
 1. Clona el repositorio y navega a la carpeta del microservicio:
    ```
    git clone <url-del-repo>
-   cd MicroServiciosDotnet/Microservicio.Libros
+   cd MicroServiciosDotnet/Microservicio.Prestamos
    ```
 
 2. Restaura las dependencias:
@@ -38,27 +38,10 @@ El servicio estará disponible en la URL que indique la consola
 ## Endpoints de prueba
 - Obtener todos los libros 
 ```
-GET http://localhost:5101/api/libros
+GET http://localhost:5102/api/prestamos
 ```
 
 - Obtener un libro por Id
 ```
-GET http://localhost:5101/api/libros/{id}
-```
-
-- Crear un nuevo libro
-```
-POST http://localhost:5101/api/libros
-
-{
-  "titulo": "string",
-  "autor": "string",
-  "cateogiria": "string",
-  "disponible": true
-}
-```
-
-- Eliminar un libro por Id
-```
-DELETE http://localhost:5101/api/libros/{id}
+GET http://localhost:5102/api/prestamos/{id}
 ```
