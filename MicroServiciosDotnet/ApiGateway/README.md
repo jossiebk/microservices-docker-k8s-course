@@ -18,10 +18,15 @@ ApiGateway para el uso con los microservicios generados.
    dotnet restore
    ```
 
-3. Ejecuta el proyecto:
+3. Ejecuta el proyecto con el puerto por defecto en launchSettings.json:
    ```
    dotnet run
    ```
+   Ejecuta el proyecto con el puerto por defecto en ocelot.json:
+   ```
+   dotnet run --urls http://localhost:9595
+   ```
+
 
 El servicio estará disponible en la URL que indique la consola 
 
@@ -33,14 +38,29 @@ El servicio estará disponible en la URL que indique la consola
 
 perstamos
 ```
-GET http://localhost:5100/api/gateway/prestamos
-GET http://localhost:5100/api/gateway/prestamos/1
+GET http://localhost:9595/api/gateway/prestamos
+GET http://localhost:9595/api/gateway/prestamos/1
 ```
 
 Libros
 ```
-GET http://localhost:5100/api/gateway/libros
-GET http://localhost:5100/api/gateway/libros/1
-POST http://localhost:5100/api/gateway/libros
-DELETE http://localhost:5100/api/gateway/libros/1
+GET http://localhost:9595/api/gateway/libros
+GET http://localhost:9595/api/gateway/libros/1
+POST http://localhost:9595/api/gateway/libros
+DELETE http://localhost:9595/api/gateway/libros/1
 ```
+
+Usuarios
+```
+GET    http://localhost:9595/api/gateway/usuarios
+GET    http://localhost:9595/api/gateway/usuarios/1
+POST   http://localhost:9595/api/gateway/usuarios
+DELETE http://localhost:9595/api/gateway/usuarios/1
+```
+
+Opiniones (Reseñas)
+```
+GET    http://localhost:9595/api/gateway/resenas/libro/1
+POST   http://localhost:9595/api/gateway/resenas
+```
+

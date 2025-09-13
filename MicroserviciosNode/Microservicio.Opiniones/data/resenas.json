@@ -1,0 +1,9 @@
+[
+    {"id":1, "libroId":101, "usuarioId":1, "puntaje":5, "comentario":"Excelente libro, lo recomiendo"},
+    {"id":2, "libroId":102, "usuarioId":2, "puntaje":3, "comentario":"Es aceptable"},
+    {"id":3, "libroId":103, "usuarioId":3, "puntaje":4, "comentario":"Me gusto"},
+    {"id":4, "libroId":101, "usuarioId":2, "puntaje":1, "comentario":"Pesimo libro"},
+    {"id":5, "libroId":101, "usuarioId":4, "puntaje":5, "comentario":"Excelente libro, lo recomiendo"},
+    {"id":6, "libroId":102, "usuarioId":1, "puntaje":5, "comentario":"Excelente libro, lo recomiendo"},
+    {"id":7, "libroId":102, "usuarioId":2, "puntaje":5, "comentario":"Excelente libro, lo recomiendo"}
+]

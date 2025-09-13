@@ -35,6 +35,42 @@
                 { "Host": "localhost", "Port": 5102 }
             ],
             "UpstreamHttpMethod": [ "Get"] 
+        },
+        {
+            "DownstreamPathTemplate": "/api/usuarios",
+            "UpstreamPathTemplate": "/api/gateway/usuarios",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5201 }
+            ],
+            "UpstreamHttpMethod": [ "Get", "Post"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/usuarios/{id}",
+            "UpstreamPathTemplate": "/api/gateway/usuarios/{id}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5201 }
+            ],
+            "UpstreamHttpMethod": [ "Get", "Delete"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/resenas/libro/{libroId}",
+            "UpstreamPathTemplate": "/api/gateway/resenas/libro/{libroId}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5202 }
+            ],
+            "UpstreamHttpMethod": [ "Get"]
+        },
+        {
+            "DownstreamPathTemplate": "/api/resenas",
+            "UpstreamPathTemplate": "/api/gateway/resenas",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                { "Host": "localhost", "Port": 5202 }
+            ],
+            "UpstreamHttpMethod": [ "Post"]
         }
     ],
     "GlobalConfiguration":{
