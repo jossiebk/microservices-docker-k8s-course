@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc Suma (SumaRequest) returns (SumaReply);
+  rpc libro (libroRequest) return (libroReply);
+}
+
+message libroRequest {
+  string id = 1;
+}
+
+message libroReply {
+  string nombre = 1;
+  string autor = 2;
+}
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
+
+message SumaRequest {
+  int32 numero1 = 1;
+  int32 numero2 = 2;
+}
+
+message SumaReply {
+  int32 resultado = 1;
+}
