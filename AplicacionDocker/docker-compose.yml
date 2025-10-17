@@ -1,0 +1,24 @@
+version: "3.8" # mi version de docker compose
+
+services:
+  # Definicion de contenedor servicio-b
+  servicio-b:
+    image: jossie/servicio-b:1.0
+    container_name: servicio-b
+    networks:
+      - app-net
+
+  # Definicion de contenedor servicio-a
+  servicio-a:
+    image: jossie/servicio-a:1.0
+    container_name: servicio-a
+    depends_on:
+      - servicio-b
+    ports:
+      - "8080:5000"
+    networks:
+      - app-net
+
+networks:
+  app-net: 
+    driver: bridge
