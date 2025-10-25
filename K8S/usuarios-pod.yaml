@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: usuarios-pod
+  labels:
+    app: microservicio-usuarios
+spec:
+  containers:
+  - name: usuarios-container
+    image: jossie/microservicioopiniones:latest
+    ports:
+    - containerPort: 5201

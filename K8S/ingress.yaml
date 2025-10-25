@@ -1,0 +1,189 @@
+# ===========================
+# USUARIOS
+# ===========================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usuarios-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: usuarios
+  template:
+    metadata:
+      labels:
+        app: usuarios
+    spec:
+      containers:
+        - name: usuarios
+          image: jossie/microserviciousuarios
+          ports:
+            - containerPort: 5201
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: usuarios-service
+spec:
+  type: ClusterIP
+  selector:
+    app: usuarios
+  ports:
+    - port: 80
+      targetPort: 5201
+
+# ===========================
+# OPINIONES
+# ===========================
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opiniones-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opiniones
+  template:
+    metadata:
+      labels:
+        app: opiniones
+    spec:
+      containers:
+        - name: opiniones
+          image: jossie/microservicioopiniones
+          ports:
+            - containerPort: 5202
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: opiniones-service
+spec:
+  type: ClusterIP
+  selector:
+    app: opiniones
+  ports:
+    - port: 80
+      targetPort: 5202
+
+# ===========================
+# PRESTAMOS
+# ===========================
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prestamos-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prestamos
+  template:
+    metadata:
+      labels:
+        app: prestamos
+    spec:
+      containers:
+        - name: prestamos
+          image: jossie/microservicioprestamos
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prestamos-service
+spec:
+  type: ClusterIP
+  selector:
+    app: prestamos
+  ports:
+    - port: 80
+      targetPort: 8080
+
+# ===========================
+# LIBROS
+# ===========================
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: libros-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: libros
+  template:
+    metadata:
+      labels:
+        app: libros
+    spec:
+      containers:
+        - name: libros
+          image: jossie/microserviciolibros
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: libros-service
+spec:
+  type: ClusterIP
+  selector:
+    app: libros
+  ports:
+    - port: 80
+      targetPort: 8080
+
+# ===========================
+# INGRESS (todos los paths)
+# ===========================
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: microservicios-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /api/usuarios(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: usuarios-service
+                port:
+                  number: 80
+
+          - path: /api/resenas(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: opiniones-service
+                port:
+                  number: 80
+
+          - path: /api/prestamos(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: prestamos-service
+                port:
+                  number: 80
+
+          - path: /api/libros(/|$)(.*)
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: libros-service
+                port:
+                  number: 80

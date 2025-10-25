@@ -1,0 +1,37 @@
+# ----------------------------
+# USUARIOS
+# ----------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: usuarios-deployment
+  labels:
+    app: microservicio-usuarios
+spec:
+  replicas: 4
+  selector: 
+    matchLabels:
+      app: microservicio-usuarios
+  template:
+    metadata:
+      labels:
+        app: microservicio-usuarios
+    spec: 
+      containers:
+      - name: usuarios-container
+        image: jossie/microserviciousuarios:10.1
+        ports:
+        - containerPort: 5201
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: usuarios-balancer-archivo
+spec:
+  type: LoadBalancer
+  selector:
+    app: microservicio-usuarios
+  ports:
+  - port: 5050
+    targetPort: 5201
