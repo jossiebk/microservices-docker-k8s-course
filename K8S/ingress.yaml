@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: usuarios
-          image: jossie/microserviciousuarios
+          image: jossie/microserviciousuarios:2.0
           ports:
             - containerPort: 5201
 ---
@@ -53,7 +53,7 @@ spec:
     spec:
       containers:
         - name: opiniones
-          image: jossie/microservicioopiniones
+          image: jossie/microservicioopiniones:2.0
           ports:
             - containerPort: 5202
 ---
@@ -89,7 +89,7 @@ spec:
     spec:
       containers:
         - name: prestamos
-          image: jossie/microservicioprestamos
+          image: jossie/microservicioprestamos:2.0
           ports:
             - containerPort: 8080
 ---
@@ -125,7 +125,7 @@ spec:
     spec:
       containers:
         - name: libros
-          image: jossie/microserviciolibros
+          image: jossie/microserviciolibros:2.0
           ports:
             - containerPort: 8080
 ---

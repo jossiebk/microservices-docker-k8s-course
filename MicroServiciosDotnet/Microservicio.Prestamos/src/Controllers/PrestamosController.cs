@@ -5,6 +5,15 @@ using System.Collections.Generic;
 
 namespace Microservicio.Prestamos.Controllers
 {
+
+    [ApiController]
+    [Route("/")]
+    public class HealthController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok("OK");
+    }
+    
     [ApiController]
     [Route("api/[controller]")]
     public class PrestamosController : ControllerBase

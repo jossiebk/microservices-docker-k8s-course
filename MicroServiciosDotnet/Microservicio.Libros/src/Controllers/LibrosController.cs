@@ -6,6 +6,14 @@ using Microservicio.Libros.Services;
 namespace Microservicio.Libros.Controllers
 {
     [ApiController]
+    [Route("/")]
+    public class HealthController : ControllerBase
+    {
+        [HttpGet]
+        public IActionResult Get() => Ok("OK");
+    }
+    
+    [ApiController]
     [Route("api/[controller]")]
     public class LibrosController : ControllerBase
     {
